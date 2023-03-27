@@ -33,7 +33,7 @@ jobs:
         lcov --zerocounters --directory ${{runner.workspace}}/builddir
         lcov --capture --initial --directory . --output-file cov_base.info
     - name: Run tests
-      run: meson test -C builddir/ --suite ztl
+      run: meson test -C builddir/ --suite dis
     - name: Lcov creation
       working-directory: ${{runner.workspace}}
       run : |
