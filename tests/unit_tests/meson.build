@@ -1,10 +1,11 @@
 
 unit_tests_srcs = [
-    'meta/sequence/empty_tests.cpp',
-    'meta/sequence/push_back_tests.cpp',
-    'meta/sequence/push_front_tests.cpp',
-    'meta/sequence/size_tests.cpp',
-    'main.cpp',
+  'iterator/input_iterator_tests.cpp',
+  'meta/sequence/empty_tests.cpp',
+  'meta/sequence/push_back_tests.cpp',
+  'meta/sequence/push_front_tests.cpp',
+  'meta/sequence/size_tests.cpp',
+  'main.cpp'
 ]
 
 subproject('unittest-cpp', default_options: 'warning_level=0')
