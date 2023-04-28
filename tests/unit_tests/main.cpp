@@ -1,3 +1,5 @@
-#include "test_framework.hpp"
+#include <utest.h>
 
-auto main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[]) -> int { return UnitTest::RunAllTests(); }
+UTEST_STATE();
+
+int main(int argc, const char* argv[]) { return utest_main(argc, argv); }

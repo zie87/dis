@@ -8,25 +8,25 @@
 
 #include "dis/meta/sequence.hpp"
 
-#include "test_framework.hpp"
+#include <utest.h>
 
-TEST(meta_sequence_empty) {
+UTEST(meta_sequence, empty) {
     {
         using seq_type = dis::meta::sequence<>;
 
-        UT_CHECK_TRUE((dis::meta::is_sequence_v<seq_type>));
-        UT_CHECK_TRUE((dis::meta::empty_v<seq_type>));
+        ASSERT_TRUE((dis::meta::is_sequence_v<seq_type>));
+        ASSERT_TRUE((dis::meta::empty_v<seq_type>));
     }
     {
         using seq_type = dis::meta::sequence<char>;
 
-        UT_CHECK_TRUE((dis::meta::is_sequence_v<seq_type>));
-        UT_CHECK_FALSE((dis::meta::empty_v<seq_type>));
+        ASSERT_TRUE((dis::meta::is_sequence_v<seq_type>));
+        ASSERT_FALSE((dis::meta::empty_v<seq_type>));
     }
     {
         using seq_type = dis::meta::sequence<int, short, double>;
 
-        UT_CHECK_TRUE((dis::meta::is_sequence_v<seq_type>));
-        UT_CHECK_FALSE((dis::meta::empty_v<seq_type>));
+        ASSERT_TRUE((dis::meta::is_sequence_v<seq_type>));
+        ASSERT_FALSE((dis::meta::empty_v<seq_type>));
     }
 }
