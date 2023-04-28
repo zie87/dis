@@ -7,14 +7,12 @@ unit_tests_srcs = [
     'main.cpp',
 ]
 
-subproject('unittest-cpp', default_options: 'warning_level=0')
-unittest_dep = dependency('unittest-cpp')
 unit_tests_inc_dir = include_directories('.')
 unit_tests_exec = executable(
     'dis_unit_tests',
     unit_tests_srcs,
     include_directories: unit_tests_inc_dir,
-    dependencies: [unittest_dep, dis_dep],
+    dependencies: [utest_dep, dis_dep],
     override_options: ['cpp_std=c++20', 'warning_level=3'],
 )
 
